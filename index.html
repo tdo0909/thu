@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Giáo Dục Môi Trường | ĐH Hải Phòng</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* ── WELCOME SCREEN ── */
+    #welcomeScreen {
+      position: fixed; inset: 0; z-index: 999;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(143,207,150,.35), transparent 30%),
+        radial-gradient(circle at 88% 82%, rgba(106,174,114,.2), transparent 32%),
+        linear-gradient(135deg, #e8f8ea 0%, #f6fff6 52%, #dff2e2 100%);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 0;
+      min-height: 100dvh;
+      padding: clamp(18px, 4vh, 44px) clamp(18px, 5vw, 72px);
+      width: 100%; max-width: 100%;
+      overflow-y: auto;
+    }
+    #welcomeScreen .w-mascot {
+      width: 100px; height: 100px; border-radius: 50%;
+      background: linear-gradient(135deg, #6aae72, #8fcf96);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 52px; margin-bottom: 22px; object-fit: contain; padding: 10px;
+      box-shadow: 0 8px 28px rgba(200,148,26,0.35);
+    }
+    #welcomeScreen .w-intro-video {
+      width: min(100%, 420px); aspect-ratio: 16 / 9;
+      object-fit: cover; border-radius: 16px; margin: 0 auto 18px;
+      background: #dcefe0; box-shadow: 0 6px 20px rgba(42,112,60,.18);
+    }
+    #welcomeScreen .w-title {
+      font-size: 26px; font-weight: 900; color: #3d2b0e;
+      text-align: center; margin-bottom: 8px; line-height: 1.2;
+    }
+    #welcomeScreen .w-sub {
+      font-size: 14px; color: #7a6340; text-align: center;
+      margin-bottom: 10px; line-height: 1.6;
+    }
+    #welcomeScreen .w-intro {
+      font-size: 13px; color: #7a6340; text-align: center;
+      margin-bottom: 28px; line-height: 1.75; max-width: 320px;
+      padding: 14px 18px;
+      background: rgba(255,255,255,0.7);
+      border-radius: 16px;
+      border: 1px solid rgba(200,148,26,0.15);
+    }
+    #welcomeScreen input {
+      width: min(100%, 520px); padding: 15px 18px; font-family: inherit; font-size: 15px;
+      border: 1.5px solid #e8d9b8; border-radius: 100px;
+      background: #fff; color: #3d2b0e; outline: none;
+      margin-bottom: 12px; transition: .25s;
+    }
+    #welcomeScreen input:focus { border-color: #c8941a; box-shadow: 0 0 0 3px rgba(200,148,26,0.15); }
+    #welcomeScreen input::placeholder { color: #b09060; }
+    #welcomeScreen .w-btn {
+      width: min(100%, 520px); padding: 15px; background: #6aae72; color: #fff;
+      border: none; border-radius: 100px; font-family: inherit;
+      font-size: 16px; font-weight: 800; cursor: pointer;
+      box-shadow: 0 4px 18px rgba(200,148,26,0.4); transition: .25s; margin-bottom: 14px;
+    }
+    #welcomeScreen .w-btn:hover { background: #4f9659; transform: translateY(-2px); }
+    #welcomeScreen .w-skip {
+      font-size: 13px; color: #a08050; text-decoration: underline;
+      cursor: pointer; background: none; border: none; font-family: inherit;
+    }
+    #welcomeScreen .w-skip:hover { color: #c8941a; }
+
+    /* hide body scroll when welcome shown */
+    body.welcome-open { overflow: hidden; }
+
+    .welcome-visual, .welcome-content { width: min(100%, 560px); display:flex; flex-direction:column; align-items:center; }
+    .welcome-visual { gap: clamp(16px, 3vh, 28px); }
+    .welcome-content { gap: 0; }
+    .welcome-social {
+      width: min(100%, 520px); display: grid; grid-template-columns: 1fr 1fr;
+      gap: 10px; margin-top: 18px;
+    }
+    .welcome-social button {
+      padding: 12px 10px; border: 1.5px solid #d6e5d7; border-radius: 100px;
+      background: rgba(255,255,255,.72); color: #78927a;
+      font: 700 13px var(--font); cursor: not-allowed; opacity: .8;
+    }
+    @media (min-width: 900px) {
+      #welcomeScreen { gap: clamp(16px, 3vh, 28px); }
+      .welcome-visual, .welcome-content { width: min(100%, 680px); }
+      #welcomeScreen .w-mascot { width:clamp(150px, 15vw, 220px); height:clamp(150px, 15vw, 220px); }
+      #welcomeScreen .w-intro-video { width:min(100%, 640px); }
+      #welcomeScreen .w-title { font-size:clamp(28px, 3vw, 42px); }
+    }
+
+    @media (max-height: 720px) {
+      #welcomeScreen { justify-content:flex-start; }
+      #welcomeScreen .w-mascot { width: 76px; height: 76px; margin-bottom: 10px; }
+      #welcomeScreen .w-intro-video { max-width: 300px; margin-bottom: 10px; }
+      #welcomeScreen .w-title { font-size: 22px; }
+      #welcomeScreen .w-sub { margin-bottom: 6px; }
+      #welcomeScreen .w-intro { padding: 10px 14px; margin-bottom: 12px; }
+    }
+  </style>
+</head>
+<body class="welcome-open">
+
+<!-- ═══════════════════════════════
+     WELCOME / LOGIN SCREEN
+═══════════════════════════════ -->
+<div id="welcomeScreen">
+  <div class="welcome-visual">
+    <video id="welcomeVideo" class="w-intro-video" src="mam1.mp4" autoplay preload="auto" playsinline></video>
+  </div>
+  <div class="welcome-content">
+    <h1 class="w-title">Giáo Dục Môi Trường</h1>
+    <p class="w-sub">Xin chào! Hãy cùng khám phá và yêu quý<br/>thiên nhiên từ những năm tháng đầu đời 🌱</p>
+    <input id="nameInput" type="text" placeholder="Nhập tên của bạn..." maxlength="30" autocomplete="off"/>
+    <button class="w-btn" onclick="enterApp()">Bắt đầu khám phá</button>
+    <button class="w-skip" onclick="enterApp()">Tiếp tục không cần đăng nhập</button>
+    <div class="welcome-social" aria-label="Đăng nhập mạng xã hội">
+      <button type="button" disabled aria-disabled="true">🔒 Facebook</button>
+      <button type="button" disabled aria-disabled="true">🔒 Google</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════
+     LIGHTBOX
+═══════════════════════════════ -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose">✕</button>
+  <img src="" alt="" id="lbImg"/>
+</div>
+
+<!-- ═══════════════════════════════
+     SIDEBAR OVERLAY
+═══════════════════════════════ -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- ═══════════════════════════════
+     SIDEBAR
+═══════════════════════════════ -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-avatar"><img class="logo-image" src="mam2-transparent.png" alt="Logo Mầm"/></div>
+    <div class="sidebar-header-text">
+      <h3>GD MÔI TRƯỜNG</h3>
+      <p>Khoa GD Tiểu học &amp; Mầm non</p>
+    </div>
+    <button class="sidebar-close" id="sidebarClose">✕</button>
+  </div>
+  <div class="sidebar-menu">
+    <a href="index.html" class="sidebar-item active">
+      <div class="si-icon">🏠</div><span class="si-text">Trang chủ</span>
+    </a>
+    <a href="dat.html" class="sidebar-item">
+      <div class="si-icon">🌱</div><span class="si-text">Môi trường đất</span>
+    </a>
+    <a href="nuoc.html" class="sidebar-item">
+      <div class="si-icon">💧</div><span class="si-text">Môi trường nước</span>
+    </a>
+    <a href="khongkhi.html" class="sidebar-item">
+      <div class="si-icon">💨</div><span class="si-text">Môi trường không khí</span>
+    </a>
+    <a href="sinhvat.html" class="sidebar-item">
+      <div class="si-icon">🦋</div><span class="si-text">Môi trường sinh vật</span>
+    </a>
+    <a href="thuvien.html" class="sidebar-item">
+      <div class="si-icon">📷</div><span class="si-text">Thư viện ảnh</span>
+    </a>
+    <button type="button" class="sidebar-item sidebar-logout" id="logoutBtn">
+      <div class="si-icon">🚪</div><span class="si-text">Đăng xuất</span>
+    </button>
+  </div>
+  <div class="sidebar-footer">
+    Trường Đại học Hải Phòng<br/>
+    Khoa Giáo dục Tiểu học &amp; Mầm non
+  </div>
+</div>
+
+<!-- ═══════════════════════════════
+     APP
+═══════════════════════════════ -->
+<div class="app">
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <button class="btn-icon" id="menuBtn" aria-label="Mở menu">☰</button>
+    </div>
+    <div class="topbar-center">
+      <img class="topbar-logo" src="mam2-transparent.png" alt="Logo"/>
+      GD Môi Trường
+    </div>
+    <div class="topbar-right"></div>
+  </div>
+
+  <!-- PAGE CONTENT -->
+  <div class="page">
+
+    <!-- GREETING -->
+    <div style="padding:16px 16px 8px;">
+      <p class="greeting" id="greetingName">Xin chào 👋</p>
+      <h1 class="page-title">Khám phá Môi Trường<br/>Tự Nhiên 🌍</h1>
+    </div>
+
+    <!-- HERO CARD -->
+    <div class="hero-card">
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/3913b8468dc200fc3ca3a3618822e3d1.jpg" alt="Hoạt động môi trường"/>
+      <div class="hero-card-overlay"></div>
+      <div class="hero-card-text">
+        <h2>Cần bắt đầu từ lứa tuổi Mầm Non</h2>
+        <p>Trường Đại học Hải Phòng — Khoa GD Tiểu học &amp; Mầm non</p>
+      </div>
+    </div>
+
+    <!-- TOPIC CHIPS -->
+    <div class="mt16 px16 mb8"><p class="section-label"><img class="section-logo" src="mam2-transparent.png" alt=""/> Chọn chủ đề</p></div>
+    <div class="chips-scroll">
+      <a href="dat.html" class="topic-chip">
+        <span class="tc-icon">🌱</span><span class="tc-name">Môi trường đất</span>
+      </a>
+      <a href="nuoc.html" class="topic-chip">
+        <span class="tc-icon">💧</span><span class="tc-name">Môi trường nước</span>
+      </a>
+      <a href="khongkhi.html" class="topic-chip">
+        <span class="tc-icon">💨</span><span class="tc-name">Không khí</span>
+      </a>
+      <a href="sinhvat.html" class="topic-chip">
+        <span class="tc-icon">🦋</span><span class="tc-name">Sinh vật</span>
+      </a>
+    </div>
+
+    <!-- 2-COL FEATURE -->
+    <div class="mt20 px16 mb8"><p class="section-label">📚 Khám phá theo loại</p></div>
+    <div class="two-col">
+      <a href="trochoi.html" class="feature-card" style="background:#fff8e8;">
+        <span class="fc-icon">🧩</span>
+        <span class="fc-title">Trò chơi</span>
+        <span class="fc-sub">15+ trò chơi tương tác</span>
+      </a>
+      <a href="thuvien.html" class="feature-card" style="background:#e8f5e9;">
+        <span class="fc-icon">📷</span>
+        <span class="fc-title">Thư viện ảnh</span>
+        <span class="fc-sub">32 hình ảnh thực tế</span>
+      </a>
+    </div>
+
+    <!-- ALL GAMES -->
+    <!-- GALLERY PREVIEW -->
+    <div class="mt20 px16 mb8"><p class="section-label">📷 Hình ảnh hoạt động</p></div>
+    <div class="gallery-grid">
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/b87e0e5ca4d32e1f33418d8b4bd4d88d.jpg" alt="Hoạt động 1" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/d4d0e4973c8ed09799a71f854ffe155d.jpg" alt="Hoạt động 2" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/992a9fe2032af9f2eceb2370952fd93b.jpg" alt="Hoạt động 3" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/a9ed3dcb706674497160f3230035e223.jpg" alt="Hoạt động 4" loading="lazy"/>
+    </div>
+    <div class="mt12 px16" style="text-align:center;">
+      <a href="thuvien.html" style="color:var(--gold);font-size:13px;font-weight:700;text-decoration:none;">Xem tất cả ảnh</a>
+    </div>
+
+    <!-- ABOUT BANNER -->
+    <div style="margin:20px 16px 0;background:linear-gradient(135deg,var(--gold),var(--gold-light));border-radius:var(--r-lg);padding:20px;">
+      <p style="font-size:12px;color:rgba(255,255,255,0.8);margin-bottom:4px;">🎓 Trường Đại học Hải Phòng</p>
+      <h3 style="font-size:16px;font-weight:800;color:#fff;margin-bottom:6px;">Khoa Giáo dục Tiểu học &amp; Mầm non</h3>
+      <p style="font-size:12px;color:rgba(255,255,255,0.85);line-height:1.6;">Giáo dục môi trường hướng đến việc nuôi dưỡng thế hệ công dân tương lai có ý thức bảo vệ môi trường sống ngay từ những năm tháng đầu đời.</p>
+    </div>
+    <div style="height:8px;"></div>
+
+  </div><!-- end .page -->
+
+  <!-- BOTTOM NAV -->
+  <nav class="bottom-nav">
+    <a href="index.html" class="nav-item active" data-page="index.html">
+      <span class="nav-icon">🏠</span><span>Trang chủ</span>
+    </a>
+    <a href="dat.html" class="nav-item" data-page="dat.html">
+      <span class="nav-icon">📖</span><span>Học</span>
+    </a>
+    <div class="nav-item-center" onclick="location.href='thuvien.html'">
+      <div class="nav-center-circle"><img class="logo-image" src="mam2-transparent.png" alt="Logo Mầm"/></div>
+      <span>Thư viện</span>
+    </div>
+    <a href="trochoi.html" class="nav-item" data-page="trochoi.html">
+      <span class="nav-icon">🧩</span><span>Trò chơi</span>
+    </a>
+    <a href="thuvien.html" class="nav-item" data-page="thuvien.html">
+      <span class="nav-icon">📷</span><span>Ảnh</span>
+    </a>
+  </nav>
+</div><!-- end .app -->
+
+<script src="script.js"></script>
+<script>
+  // ALWAYS show welcome screen on load (reset name each visit)
+  window.addEventListener('DOMContentLoaded', () => {
+    // always show welcome
+    document.getElementById('welcomeScreen').style.display = 'flex';
+    document.body.classList.add('welcome-open');
+    // pre-fill if has name
+    const stored = localStorage.getItem('userName');
+    if (stored) document.getElementById('nameInput').value = stored;
+  });
+
+  function enterApp() {
+    const welcomeVideo = document.getElementById('welcomeVideo');
+    welcomeVideo.pause();
+    welcomeVideo.currentTime = 0;
+    welcomeVideo.removeAttribute('src');
+    welcomeVideo.load();
+    const name = document.getElementById('nameInput').value.trim();
+    if (name) localStorage.setItem('userName', name);
+    const ws = document.getElementById('welcomeScreen');
+    ws.style.opacity = '0';
+    ws.style.transition = 'opacity 0.35s ease';
+    setTimeout(() => { ws.style.display = 'none'; }, 350);
+    document.body.classList.remove('welcome-open');
+    const el = document.getElementById('greetingName');
+    if (el) el.textContent = name ? `Xin chào ${name} 👋` : 'Xin chào 👋';
+  }
+
+  document.getElementById('nameInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter') enterApp();
+  });
+
+  const welcomeVideo = document.getElementById('welcomeVideo');
+  welcomeVideo.volume = 1;
+  welcomeVideo.muted = false;
+  welcomeVideo.play().catch(() => {});
+  document.addEventListener('pointerdown', () => {
+    welcomeVideo.muted = false;
+    welcomeVideo.volume = 1;
+    welcomeVideo.play().catch(() => {});
+  }, { once: true });
+  document.addEventListener('keydown', () => {
+    welcomeVideo.muted = false;
+    welcomeVideo.volume = 1;
+    welcomeVideo.play().catch(() => {});
+  }, { once: true });
+</script>
+</body>
+</html>

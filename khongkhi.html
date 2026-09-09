@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Môi Trường Không Khí | Giáo Dục Môi Trường</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="lightbox" id="lightbox"><button class="lb-close" id="lbClose">✕</button><img src="" alt="" id="lbImg"/></div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-avatar"><img class="logo-image" src="mam2-transparent.png" alt="Logo Mầm"/></div>
+    <div class="sidebar-header-text"><h3>GD MÔI TRƯỜNG</h3><p>Khoa GD Tiểu học &amp; Mầm non</p></div>
+    <button class="sidebar-close" id="sidebarClose">✕</button>
+  </div>
+  <div class="sidebar-menu">
+    <a href="index.html" class="sidebar-item"><div class="si-icon">🏠</div><span class="si-text">Trang chủ</span></a>
+    <a href="dat.html" class="sidebar-item"><div class="si-icon">🌱</div><span class="si-text">Môi trường đất</span></a>
+    <a href="nuoc.html" class="sidebar-item"><div class="si-icon">💧</div><span class="si-text">Môi trường nước</span></a>
+    <a href="khongkhi.html" class="sidebar-item active"><div class="si-icon">💨</div><span class="si-text">Môi trường không khí</span></a>
+    <a href="sinhvat.html" class="sidebar-item"><div class="si-icon">🦋</div><span class="si-text">Môi trường sinh vật</span></a>
+    <a href="thuvien.html" class="sidebar-item"><div class="si-icon">📷</div><span class="si-text">Thư viện ảnh</span></a>
+    <button type="button" class="sidebar-item sidebar-logout" id="logoutBtn"><div class="si-icon">🚪</div><span class="si-text">Đăng xuất</span></button>
+  </div>
+  <div class="sidebar-footer">Trường Đại học Hải Phòng<br/>Khoa Giáo dục Tiểu học &amp; Mầm non</div>
+</div>
+
+<div class="app">
+  <div class="topbar">
+    <div class="topbar-left">
+      <button class="btn-icon" id="menuBtn">☰</button>
+      <a href="#" class="topbar-back" onclick="goBackToPreviousPage(); return false;">Quay lại</a>
+    </div>
+    <div class="topbar-center"></div><div class="topbar-right"></div>
+  </div>
+
+  <div class="page">
+    <div class="subhero">
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/fedcb6fc1851bbffc844eba811abc00c.jpg" alt="Môi trường không khí"/>
+      <div class="subhero-overlay"></div>
+      <div class="subhero-content">
+        <span class="subhero-chip">Chủ đề 03</span>
+        <h1 class="subhero-title">💨 Môi Trường Không Khí</h1>
+      </div>
+    </div>
+
+    <div style="padding:16px 16px 8px;">
+      <p style="font-size:13px;color:var(--brown-mid);line-height:1.65;">Không khí trong lành là quyền của mọi sinh linh. Khám phá khí quyển và cùng nhau bảo vệ bầu trời xanh.</p>
+    </div>
+
+    <div class="px16 mt16 mb8"><p class="section-label">🧩 Trò chơi tương tác</p></div>
+    <div class="game-list">
+
+      <div class="game-card">
+        <div class="game-icon-box">🌬️</div>
+        <div class="game-info"><h4>Không khí sạch hay bẩn?</h4><p>Sắp xếp theo nhóm — phân biệt không khí sạch và ô nhiễm.</p></div>
+        <a href="https://wordwall.net/resource/110029860" target="_blank" rel="noopener" class="game-btn-go">Chơi</a>
+      </div>
+
+      <div class="game-card">
+        <div class="game-icon-box">🎡</div>
+        <div class="game-info"><h4>Hành động đúng hay sai?</h4><p>Quay bánh xe — khám phá hành động bảo vệ không khí.</p></div>
+        <a href="https://wordwall.net/resource/110176368" target="_blank" rel="noopener" class="game-btn-go">Chơi</a>
+      </div>
+
+      <div class="game-card">
+        <div class="game-icon-box">🏭</div>
+        <div class="game-info"><h4>Tìm nguồn gây khói bụi</h4><p>Nhận biết các nguồn gây ô nhiễm không khí.</p></div>
+        <a href="https://view.genially.com/69f46e378a191b94110c1fa7" target="_blank" rel="noopener" class="game-btn-go">Chơi</a>
+      </div>
+
+    </div>
+
+    <!-- VIDEO -->
+    <div class="px16 mt20 mb8"><p class="section-label"><span class="label-icon">📺</span><span>Video học tập</span></p></div>
+    <div class="video-list">
+      <div class="video-card"><div class="video-thumb"><video src="Không khí sạch hay bẩn(KK).mp4" controls preload="metadata"></video></div><div class="video-info"><span class="vi-icon">💨</span><span class="vi-text">Không khí sạch hay bẩn</span></div></div>
+      <div class="video-card"><div class="video-thumb"><video src="Lá phổi vui hay buồn(KK).mp4" controls preload="metadata"></video></div><div class="video-info"><span class="vi-icon">💨</span><span class="vi-text">Lá phổi vui hay buồn</span></div></div>
+      <div class="video-card"><div class="video-thumb"><video src="Tìm hiểu không khí(KK).mp4" controls preload="metadata"></video></div><div class="video-info"><span class="vi-icon">💨</span><span class="vi-text">Tìm hiểu không khí</span></div></div>
+    </div>
+
+    <div class="qr-banner">
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/89e2c90bc8eede384e0c92c76cb17f22.png" alt="QR trò chơi" loading="lazy"/>
+    </div>
+
+    <div style="margin:16px;display:flex;gap:10px;">
+      <a href="nuoc.html"    style="flex:1;text-align:center;padding:12px;background:var(--white);border:1.5px solid var(--border);border-radius:100px;font-size:13px;font-weight:700;color:var(--brown-mid);text-decoration:none;">Môi trường nước</a>
+      <a href="sinhvat.html" style="flex:1;text-align:center;padding:12px;background:var(--gold);border-radius:100px;font-size:13px;font-weight:700;color:#fff;text-decoration:none;">Sinh vật</a>
+    </div>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="index.html"   class="nav-item"><span class="nav-icon">🏠</span><span>Trang chủ</span></a>
+    <a href="khongkhi.html" class="nav-item active"><span class="nav-icon">📖</span><span>Học</span></a>
+    <div class="nav-item-center" onclick="location.href='thuvien.html'"><div class="nav-center-circle"><img class="logo-image" src="mam2-transparent.png" alt="Logo Mầm"/></div><span>Thư viện</span></div>
+    <a href="trochoi.html" class="nav-item"><span class="nav-icon">🧩</span><span>Trò chơi</span></a>
+    <a href="thuvien.html" class="nav-item"><span class="nav-icon">📷</span><span>Ảnh</span></a>
+  </nav>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Thư Viện Ảnh | Giáo Dục Môi Trường</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="lightbox" id="lightbox"><button class="lb-close" id="lbClose">✕</button><img src="" alt="" id="lbImg"/></div>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-avatar"><img class="logo-image" src="mam2-transparent.png" alt="Logo Mầm"/></div>
+    <div class="sidebar-header-text"><h3>GD MÔI TRƯỜNG</h3><p>Khoa GD Tiểu học &amp; Mầm non</p></div>
+    <button class="sidebar-close" id="sidebarClose">✕</button>
+  </div>
+  <div class="sidebar-menu">
+    <a href="index.html" class="sidebar-item"><div class="si-icon">🏠</div><span class="si-text">Trang chủ</span></a>
+    <a href="dat.html" class="sidebar-item"><div class="si-icon">🌱</div><span class="si-text">Môi trường đất</span></a>
+    <a href="nuoc.html" class="sidebar-item"><div class="si-icon">💧</div><span class="si-text">Môi trường nước</span></a>
+    <a href="khongkhi.html" class="sidebar-item"><div class="si-icon">💨</div><span class="si-text">Môi trường không khí</span></a>
+    <a href="sinhvat.html" class="sidebar-item"><div class="si-icon">🦋</div><span class="si-text">Môi trường sinh vật</span></a>
+    <a href="thuvien.html" class="sidebar-item active"><div class="si-icon">📷</div><span class="si-text">Thư viện ảnh</span></a>
+    <button type="button" class="sidebar-item sidebar-logout" id="logoutBtn"><div class="si-icon">🚪</div><span class="si-text">Đăng xuất</span></button>
+  </div>
+  <div class="sidebar-footer">Trường Đại học Hải Phòng<br/>Khoa Giáo dục Tiểu học &amp; Mầm non</div>
+</div>
+
+<div class="app">
+  <div class="topbar">
+    <div class="topbar-left">
+      <button class="btn-icon" id="menuBtn">☰</button>
+      <a href="#" class="topbar-back" onclick="goBackToPreviousPage(); return false;">Quay lại</a>
+    </div>
+    <div class="topbar-center">📷 Thư Viện Ảnh</div>
+    <div class="topbar-right"></div>
+  </div>
+
+  <div class="page">
+    <!-- HOẠT ĐỘNG THỰC TẾ -->
+    <div style="padding:16px 16px 8px;">
+      <p class="greeting">Hình ảnh hoạt động</p>
+      <h2 style="font-size:20px;font-weight:900;color:var(--brown);">Ảnh Hoạt Động 📷</h2>
+    </div>
+    <div class="gallery-grid">
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/3913b8468dc200fc3ca3a3618822e3d1.jpg" alt="Hoạt động 1" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/b87e0e5ca4d32e1f33418d8b4bd4d88d.jpg" alt="Hoạt động 2" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/d4d0e4973c8ed09799a71f854ffe155d.jpg" alt="Hoạt động 3" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/992a9fe2032af9f2eceb2370952fd93b.jpg" alt="Hoạt động 4" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/a9ed3dcb706674497160f3230035e223.jpg" alt="Hoạt động 5" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/a70293ce0aaa2f29d2ac4d23e57570f4.jpg" alt="Hoạt động 6" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/86d919632e8df8859271306c8f3572b8.jpg" alt="Hoạt động 7" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/d95d93a898a922ba59498db2f1affa10.jpg" alt="Hoạt động 8" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/ab37a713d98575bf9e10f2c2dffb607b.jpg" alt="Hoạt động 9" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/a0d6d08588b74c57955f95ef6be6630f.jpg" alt="Hoạt động 10" loading="lazy"/>
+    </div>
+
+    <!-- TÀI LIỆU INFOGRAPHIC -->
+    <div style="padding:20px 16px 8px;">
+      <p class="greeting">Infographic &amp; Minh hoạ</p>
+      <h2 style="font-size:20px;font-weight:900;color:var(--brown);">Tài Liệu Giáo Dục 🖼️</h2>
+    </div>
+    <div class="gallery-grid">
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/16370cd2034405fdb8d599263d9c70a0.png" alt="Tài liệu 1" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/0b5930a49af1a1df10db7364ce7fade1.png" alt="Tài liệu 2" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/1a9353a3e74c0b77e8934def756ba73e.png" alt="Tài liệu 3" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/c15ea9295ad262597076a96659322b04.png" alt="Tài liệu 4" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/545cbeb4d9c0cc113a0e8812cc18244e.png" alt="Tài liệu 5" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/a831944106e284cd954c5e555f83e6e1.png" alt="Tài liệu 6" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/38acdf9950be7c719dab9bae5c73799b.png" alt="Tài liệu 7" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/b6f9b1bdc24ef55415ffe4df6793f8f6.png" alt="Tài liệu 8" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/de093e90bd47e9f4b29bca0aa5c01889.png" alt="Tài liệu 9" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/f23c90cc2ecbd9b358676fe6ed9ba408.png" alt="Tài liệu 10" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/f2938f24de0173888d1518cd3e521712.png" alt="Tài liệu 11" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/26bb80850d8f8e6668855a709429d658.png" alt="Tài liệu 12" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/cbab5103941d33c3533acb553cb0dfdc.png" alt="Tài liệu 13" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/d13cbb2a043998bbc225d4d7c5157494.png" alt="Tài liệu 14" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/0facd2d17ea87edfb12fc2879884e7d6.png" alt="Tài liệu 15" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/e96b8a275fe1bcc907010133fd827de0.png" alt="Tài liệu 16" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/a408ecbfee633c60d8006dd03468ee61.png" alt="Tài liệu 17" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/c2be69117f7312818c6bc3dcc210070e.png" alt="Tài liệu 18" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/20989c5b3370b616f4e530fb75d24dd9.png" alt="Tài liệu 19" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/31c4d136bc7d5151edff8d0a33a82516.png" alt="Tài liệu 20" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/55741745c82a42bc4cba169e4a6bb625.png" alt="Tài liệu 21" loading="lazy"/>
+      <img src="https://giaoducmoitruong.my.canva.site/_assets/media/f0bc50e956cbf7c3eb0be1ff99097d3a.png" alt="Tài liệu 22" loading="lazy"/>
+    </div>
+    <div style="height:8px;"></div>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="index.html"   class="nav-item"><span class="nav-icon">🏠</span><span>Trang chủ</span></a>
+    <a href="dat.html"     class="nav-item"><span class="nav-icon">📖</span><span>Học</span></a>
+    <div class="nav-item-center" onclick="location.href='thuvien.html'"><div class="nav-center-circle"><img class="logo-image" src="mam2-transparent.png" alt="Logo Mầm"/></div><span>Thư viện</span></div>
+    <a href="trochoi.html" class="nav-item"><span class="nav-icon">🧩</span><span>Trò chơi</span></a>
+    <a href="thuvien.html" class="nav-item active"><span class="nav-icon">📷</span><span>Ảnh</span></a>
+  </nav>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
